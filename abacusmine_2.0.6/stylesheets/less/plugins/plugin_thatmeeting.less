@@ -1,0 +1,19 @@
+@import url("../variables.less");
+@import url("../mixins.less");
+
+/*Styles for ThatMeeting plugin*/
+
+#meeting_form {
+    .rounded;
+    border: 1px solid @border-color;
+    padding: @GGW;
+    box-sizing: border-box;
+    margin-bottom: @GGW;
+    width: 49%;
+	
+    @media (max-width: 770px) {
+        width: 100% !important;
+        float: none;
+        display: block;
+    }
+}

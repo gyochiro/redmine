@@ -1,0 +1,112 @@
+@import url("../variables.less");
+@import url("../mixins.less");
+/* ------------ Styles for Easy Gantt plugin ------------ */
+
+#content #easy_gantt.redmine {
+	
+	.easy-gantt__menu-group--tooltiped ul {
+		
+		&:after {
+			content: none;
+		}
+		
+		.gantt-menu-button.icon {
+			background-image: none;
+		}
+	}
+	
+	.easy-gantt__menu-group--tooltiped ul .gantt-menu-button {
+		padding: 5px 20px;
+	}
+	
+	.easy-gantt__menu-group--tooltiped ul {
+		min-width: 220px;
+		padding: 10px !important;
+	}
+	
+    #sample_close_button {
+        .btn;
+        .gradient-red;
+        .rounded;
+    }
+
+    a.button {
+        font-size: @BFS;
+		background-color: transparent;
+		color: @link-color;
+    }
+	
+	.gantt-menu-button {
+		&.icon-settings,
+		&.icon-save,
+		&.icon-print,
+		&.icon-calendar {
+			padding-left: 10px !important;
+		}
+	}
+		
+	.gantt-menu-button.active, 
+	#easy_gantt.redmine .gantt_button.active {
+		color: @link-color !important;
+	}
+
+    #easy_gantt_menu {
+
+		#button_jump_today {
+			background-image: none;
+			padding: 8px 10px;
+		}
+
+        .gantt-menu-button.icon-save:before {
+            color: @white;
+        }
+
+        .gantt-menu-button.fa-exclamation-circle:before {
+            color: @icon-color;
+        }
+        
+        .push-right {
+            @media (max-width: 420px) {
+                .rounded;
+                float: none;
+                text-align: left;
+                clear: both;
+                display: block;
+                background: @white;
+                border: 1px solid @border-color;
+                padding: @GGW;
+                margin-bottom: @GGW;
+            }
+            
+            div {
+                @media (max-width: 420px) {
+                	display: block;
+                }
+            }
+    
+            div a {
+                @media (max-width: 420px) {
+                	margin: 0;
+                }
+            }
+        }
+    }
+
+    .gantt_task_line .gantt_task_content {
+        border: 1px solid rgba(51, 141, 71, 1);
+    }
+
+    #easy_gantt_footer {
+		
+		#button_print {
+			padding: 8px 10px;
+		}
+
+        #button_sample a {
+            .btn;
+            .gradient-default;
+            .rounded;
+        }
+    }
+}
+

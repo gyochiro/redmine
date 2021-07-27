@@ -1,0 +1,63 @@
+@import url("../variables.less");
+@import url("../mixins.less");
+
+/* ------------ Styles for Redmine CMS plugin ------------ */
+#top-menu {
+    #account.cms > ul > li {
+        height: auto !important;
+    }
+
+    #account.cms > ul > li ul {
+        border: none;
+    }
+
+    #account.cms a:hover:before {
+        color: @icon-color !important;
+    }
+
+    #account:hover .menu-children,
+    #account:focus .menu-children {
+        display: block;
+    }
+
+    ul.menu-children > li {
+        padding: 0 !important;
+    }
+    
+    /*Redmine CMS Styles*/
+    
+    > ul a:hover + ul.menu-children,
+    > ul a + ul.menu-children:hover {
+        display: block !important;
+    }
+    
+    > ul a + ul.menu-children {
+        .rounded;
+        display: block;
+        margin: 0;
+        padding: @GGW;
+        top: 41px !important;
+		left: 81px !important;
+        
+        li {
+            border-bottom: none;
+            margin: 0;
+            line-height: 30px;
+        }
+        
+        a:hover:before {
+            color: lighten(@nav-color, 40%);
+        }
+    }
+}
+
+#wrapper #cms-settings-menu a {
+    line-height: 2.5;
+}
+
+.controller-cms_pages.action-index {
+    
+    #content > .contextual {
+        margin: @GGW;
+    }
+}

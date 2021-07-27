@@ -1,0 +1,49 @@
+@import url("variables.less");
+@import url("mixins.less");
+/*Modal popups*/
+
+#trackers_description {
+	display: none;
+}
+
+.ui-widget-overlay {
+    background: url("../../images/bg.png") repeat scroll 50% 50% @nav-color !important;
+}
+
+.ui-widget-header,
+.ui-dialog .ui-dialog-titlebar {
+    background: @text-color !important;
+    border: none !important;
+    font-weight: normal;
+	cursor: move;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	border: none;
+	background: none;
+}
+
+div.modal h3.title {
+	display: none !important;
+}
+
+
+div.modal,
+.ui-widget { 
+	
+	.ui-dialog-titlebar-close {
+    .transition;
+	    background: url("../../images/delete.png") no-repeat center center !important;
+	    border: none !important;
+	}
+	
+	.ui-icon,
+	.ui-state-default .ui-icon, 
+	.ui-widget-content .ui-icon {
+		background-image: none;
+	}
+}
+
+.ui-button:focus {
+	outline: none;
+}

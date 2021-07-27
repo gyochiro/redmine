@@ -1,0 +1,58 @@
+@import url("../variables.less");
+@import url("../mixins.less");
+
+/*Styles for RedmineX Gantt plugin*/
+
+.controller-redmine_x_gantt {
+	
+	#gantt-save-btn {
+		.rounded;
+	    .gradient-green;
+	    .btn;
+		color: @white;
+	    padding: 8px 28px !important;
+	    cursor: pointer;
+	    margin: 0 @GGW 0 0;
+		
+		&:hover {
+			background: darken(@green, 15%) !important;
+		}
+	}
+	
+	.gantt-undo-group button:before {
+		left: 16px;
+		top: 8px;
+	}
+	
+	#content>.gantt-controls.gantt-right {
+		justify-content: flex-end;
+	}
+	
+	.gantt-undo-group button, 
+	.gantt-export-group button {
+		background-position: 17px center !important;
+	}
+	
+	.gantt-controls .filter-wrapper {
+		font-size: 14px;
+	}
+	
+	.gantt_btn_set.gantt_save_btn_set, 
+	.dhtmlx_popup_controls div[result="save"] {
+		background: @green;       
+		border: 1px solid darken(@green, 5%);
+		color: @white;
+		
+		&:hover {
+			background: darken(@green, 15%);
+		}
+	}
+	
+	.gantt_duration .gantt_duration_value {
+		margin: 0;
+	}
+	
+	#gantt-settings-btn {
+		background-position: 5px center;
+	}	
+}

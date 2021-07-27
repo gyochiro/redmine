@@ -1,0 +1,94 @@
+@import url("../variables.less");
+@import url("../mixins.less");
+/* ------------ Styles for Extra queries plugin ------------ */
+
+#wrapper {
+    
+    /*----- Green button -----*/
+    a.eq-button.eq-button-success, .eq-button.eq-button-success {
+        .rounded;
+        .gradient-green;
+        .btn;
+		background: @green !important;
+		
+        &:hover, &:focus, &:active {
+            background: darken(@green, 10%) !important;
+        }
+    }
+
+    /*----- Default button -----*/
+    a.eq-button,
+    .eq-button {
+        .rounded;
+		font-size: 12px;
+		background: #d1d7e4;
+		height: 30px !important;
+		line-height: 2.25;
+		text-shadow: none !important;
+		box-shadow: none !important;
+		padding: 0 27px;
+		
+        &:hover, &:focus, &:active {
+            background: darken(@query-form, 15%);
+        }
+
+        .eq-caret {
+            margin-top: 14px;
+        }
+
+        .eq-filter-delete {
+            margin-top: 0.5*@GGW;
+			text-shadow: none !important;
+        }
+    }
+
+    /*----- Other -----*/
+    #query_form_with_buttons {
+        .buttons {
+            padding-left: 0;
+        }
+
+        .buttons #eq-apply-query + a.eq-button {
+            .gradient-red;
+            &:hover, &:focus, &:active {
+                background: @red;
+            }
+        }
+
+        #eq-filters {
+            margin-bottom: @GGW;
+        }
+
+        .eq-panel td {
+            padding-left: 0;
+        }
+
+        fieldset.collapsible div.eq-columns-list {
+            padding-left: @GGW;
+        }
+
+        .eq-search {
+            background-color: @white;
+            background-position: 95% 50%;
+        }
+
+        .eq-filter-wrap {
+            margin-bottom: 0;
+        }
+    }
+
+    /* #query_form_with_buttons */
+    #sidebar {
+        .eq-sidebar-queries {
+            padding-left: 0;
+        }
+
+        .eq-sidebar-queries ul {
+            padding-left: 2*@GGW;
+        }
+
+        .eq-pin.fa:before {
+            font-size: 12px !important;
+        }
+    }
+}
