@@ -21,6 +21,15 @@ COPY a1 public/themes/a1
 COPY PurpleMine2-master public/themes/PurpleMine2-master
 # The abacusmine theme
 COPY abacusmine_2.0.6 public/themes/abacusmine_2.0.6
+#Redmineup Tags
+COPY redmineup_tags plugins/redmineup_tags
+#Install Patch (Quick Change Status)
+COPY select-status.patch /usr/src/redmine
+#patch -p1 < /usr/src/redmine/select-status.patch
+#Install Patch (欄位拖拉)
+#COPY GCF-4.2.patch redmine
+COPY GCF-4.2.patch /usr/src/redmine
+#patch -p1 < /usr/src/redmine/GCF-4.2.patch
 
-#TEST
-#COPY database.yml.example database.yml
+#Using Bundler with Rails在Build Image時先確認GemFile Dependency, 避免Runtime時在內網環境無法access RubyGems.org
+RUN bundle install
