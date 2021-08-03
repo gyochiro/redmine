@@ -1,3 +1,5 @@
+docker exec -it custom_dockerfile_redmine_1 bash
+
 bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 RAILS_ENV=production bundle exec rake redmine:plugins:migrate NAME=redmine_custom_workflows
 
