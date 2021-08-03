@@ -1,0 +1,7 @@
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+RAILS_ENV=production bundle exec rake redmine:plugins:migrate NAME=redmine_custom_workflows
+
+bundle exec rake redmine:plugins NAME=redmineup_tags RAILS_ENV=production
+patch -p1 < /usr/src/redmine/select-status.patch
+patch -p1 < /usr/src/redmine/GCF-4.2.patch
+RAILS_ENV=production bundle exec rake db:migrate
