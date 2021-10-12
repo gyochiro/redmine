@@ -1,0 +1,16 @@
+JetStream觀念參考
+https://bravenewgeek.com/tag/jetstream/
+
+leaf node連到system account的好處是
+可以透過這個account管理所有server (否則實際上的user account會被isolate)
+
+hint1. if here sys account connected , but no domain specify
+此時以這個架構下hub會是metadata leader (no leafnode remote specify, avoid leafnode server become a leader)
+但當leafnode connection down, 就無法create or consume stream
+
+
+there is a single metadata leader for a Jetstream cluster which is responsible for processing requests to create or delete streams. If a request is sent to a follower, it’s automatically forwarded to the leader. When a stream is created, the metadata leader selects replicationFactor nodes to participate in the stream (initially, this selection is random but could be made more intelligent, e.g. selecting based on current load) and replicates the stream to all nodes in the cluster
+
+
+one way to connect Stream to across JetStream domain would be to have a command in control stream
+and century to communicate from the hub to each spoke without lose even when leafnode are disconnected
